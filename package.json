@@ -1,0 +1,19 @@
+{
+  "name": "glitch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "server": "webpack serve",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
+  },
+  "author": "Sneshu",
+  "dependencies": {
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}

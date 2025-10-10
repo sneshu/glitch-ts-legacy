@@ -1,0 +1,29 @@
+@font-face 
+{
+    font-family: 'Retro';
+    src: url('../Assets/Fonts/Pixellari.ttf');
+}
+
+body
+{
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+canvas
+{
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.debug
+{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    color:white;
+    font-size: 16px;
+    font-family: monospace;
+}
