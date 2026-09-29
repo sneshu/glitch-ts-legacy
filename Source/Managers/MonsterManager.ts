@@ -149,11 +149,11 @@ export class MonsterManager
                 m.spriteY = 10;
                 m.life = 33;
                 m.attackDamage = 2;
-                m.projectileCount = 4;
+                m.projectileCount = 2;
                 m.projectileSpriteX = 3;
-                m.projectileArc = Utils.angleToRadians(90);
+                m.projectileArc = Utils.angleToRadians(60);
                 m.maxAttackCooldown = 3;
-                m.projectileSpeedMultiplier = 0.7;
+                m.projectileSpeedMultiplier = 1.2;
                 m.attackSoundAsset = `magic-cast`;
                 break;
             }
@@ -314,7 +314,7 @@ export class MonsterManager
             let damage = this.ctx.player.attackDamage;
             if (this.ctx.player.midasSword && this.ctx.player.gold > this.ctx.player.score)
             {
-                damage += 3 * this.ctx.player.midasSword;
+                damage += 5 * this.ctx.player.midasSword;
             }
 
             this.takeDamage(m, { damage, impactX, impactY, direction });

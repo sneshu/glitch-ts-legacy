@@ -60,21 +60,21 @@ export class ShopItemManager
                 id: `Health Potion`, 
                 spriteX: 6,
                 spriteY: 4,
-                description: [`Increases max life by 1`, `Regenerates life by 3`],
-                price: 120,
+                description: [`Increases max life by 2`, `Regenerates life by 5`],
+                price: 100,
                 purchaseCallback: () =>
                 {
-                    this.ctx.indicators.add({ x: this.ctx.player.x, y: this.ctx.player.y, content: `+1 max life`, color: indicatorColor });
-                    this.ctx.player.maxLives += 1;
-                    this.ctx.player.regenerateLife(3);
+                    this.ctx.indicators.add({ x: this.ctx.player.x, y: this.ctx.player.y, content: `+2 max life`, color: indicatorColor });
+                    this.ctx.player.maxLives += 2;
+                    this.ctx.player.regenerateLife(5);
                 }
             },
             {
                 id: `Life Stealer`,
                 spriteX: 6,
                 spriteY: 0,
-                description: [`On kill regenerate 1 life`],
-                price: 500,
+                description: [`On kill regenerate 2 life`],
+                price: 450,
                 purchaseCallback: () =>
                 {
                     this.ctx.indicators.add({ x: this.ctx.player.x, y: this.ctx.player.y, content: `+1 Life Stealer`, color: indicatorColor });
@@ -85,31 +85,31 @@ export class ShopItemManager
                 id: `Sword Upgrade`, 
                 spriteX: 1,
                 spriteY: 0,
-                description: [`Increased attack damage by 1`],
+                description: [`Increased attack damage by 2`],
                 price: 200,
                 purchaseCallback: () =>
                 {
-                    this.ctx.indicators.add({ x: this.ctx.player.x, y: this.ctx.player.y, content: `+1 attack damage`, color: indicatorColor });
-                    this.ctx.player.attackDamage += 1;
+                    this.ctx.indicators.add({ x: this.ctx.player.x, y: this.ctx.player.y, content: `+2 attack damage`, color: indicatorColor });
+                    this.ctx.player.attackDamage += 2;
                 }
             },
             {
                 id: `Hermes Boots`, 
                 spriteX: 2,
                 spriteY: 4,
-                description: [`Increased movement speed by 20%`],
-                price: 300,
+                description: [`Increased movement speed by 10%`],
+                price: 200,
                 purchaseCallback: () =>
                 {
-                    this.ctx.indicators.add({ x: this.ctx.player.x, y: this.ctx.player.y, content: `+20% movement speed`, color: indicatorColor });
-                    this.ctx.player.maxSpeedX += 1.8 * WorldManager.GRID_SIZE;
+                    this.ctx.indicators.add({ x: this.ctx.player.x, y: this.ctx.player.y, content: `+10% movement speed`, color: indicatorColor });
+                    this.ctx.player.maxSpeedX += 0.9 * WorldManager.GRID_SIZE;
                 }
             },
             {
                 id: `Gambler's Fate`, 
                 spriteX: 3,
                 spriteY: 4,
-                description: [`Don't take any damage, but you have`, `1 / [10 + amount] chance to die instantly on hit`],
+                description: [`Don't take any damage,`, `(1 / [10 + 5 * amount]) chance to die on hit`],
                 price: 300,
                 purchaseCallback: () =>
                 {
@@ -121,8 +121,8 @@ export class ShopItemManager
                 id: `Midas Sword`, 
                 spriteX: 5,
                 spriteY: 0,
-                description: [`Increases attack damage by 3`, `Only if have more gold in your wallet than score`],
-                price: 500,
+                description: [`Increases attack damage by 5`, `Only if your gold > your score`],
+                price: 300,
                 purchaseCallback: () =>
                 {
                     this.ctx.indicators.add({ x: this.ctx.player.x, y: this.ctx.player.y, content: `+Midas Sword`, color: indicatorColor });
@@ -133,7 +133,7 @@ export class ShopItemManager
                 id: `Stone Block`, 
                 spriteX: 4,
                 spriteY: 4,
-                description: [`Increases gravity pull by 20%`],
+                description: [`Increases gravity pull by 20%`, `Stronger pull = faster attacks!`],
                 price: 400,
                 purchaseCallback: () =>
                 {

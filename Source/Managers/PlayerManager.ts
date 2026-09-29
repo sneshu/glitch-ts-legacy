@@ -60,7 +60,7 @@ export class PlayerManager implements IMovementData, ICombatData, IAnimationData
     life: number = this.maxLives;
     attackCooldown: number = 0;
     maxAttackCooldown: number = 0.25;
-    attackDamage: number = 1;
+    attackDamage: number = 2;
     projectileSpriteX: number = 0;
     projectileSpriteY: number = 0;
     projectileCount: number = 0;
@@ -188,7 +188,7 @@ export class PlayerManager implements IMovementData, ICombatData, IAnimationData
         {
             damage = 0;
 
-            if (Utils.randomInt(1, 10 + this.gamblersFate) == 1)
+            if (Utils.randomInt(1, 10 + 5 * this.gamblersFate) == 1)
             {
                 this.die();
             }
@@ -221,7 +221,7 @@ export class PlayerManager implements IMovementData, ICombatData, IAnimationData
     {
         if (this.lifeStealer > 0)
         {
-            this.regenerateLife(this.lifeStealer);
+            this.regenerateLife(this.lifeStealer * 2);
         }
     }
 
